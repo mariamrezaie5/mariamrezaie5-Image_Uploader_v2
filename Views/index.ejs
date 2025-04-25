@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Home</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Uploaded Images</h1>
+    <form action="/upload" method="get" style="display: inline;">
+      <button class="button">Upload an Image</button>
+    </form>
+    
+    <form action="/gallery" method="get" style="display: inline;">
+      <button class="button">View Gallery</button>
+    </form>
+  <% if (image.length === 0) { %>
+    <p>No images uploaded yet</p>
+  <% } else { %>
+    <img src="/uploads/<%= image[image.length - 1].filename %>" style="max-width: 300px;">
+  <% } %>
+  </div>
+</body>
+</html>
